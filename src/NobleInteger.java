@@ -1,17 +1,33 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
-public class Main {
-    public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import java.util.Arrays;
+import java.util.Scanner;
+class Noble {
+    public int Value(int a[], int n) {
+        int count = 0;
+        for (int i = 0; i < n; i++) {
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+            if (a[i] == i) {
+                count += 1;
+            }
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+
         }
+        return count;
+    }
+}
+public class NobleInteger {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter n");
+        int n=sc.nextInt();
+
+        int a[]=new int [n];
+        System.out.println("enter different  "+n+" elements");
+        for(int i=0;i<n;i++){
+             a[i] = sc.nextInt();
+        }
+        Arrays.sort(a);
+        Noble sol=new Noble();
+        System.out.println(sol.Value(a,n));
+
     }
 }
